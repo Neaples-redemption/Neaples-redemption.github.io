@@ -8,7 +8,7 @@
         <id>http://www.lucky233.buzz/2023/08/14/algorithm/%E6%9C%80%E7%9F%AD%E8%B7%AF/</id>
         <title></title>
         <link rel="alternate" href="http://www.lucky233.buzz/2023/08/14/algorithm/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
-        <content type="html">&lt;h3 id=&#34;bellman-ford&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bellman-ford&#34;&gt;#&lt;/a&gt; Bellman-Ford&lt;/h3&gt;
+        <content type="html">&lt;h3 id=&#34;bellman-ford&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bellman-ford&#34;&gt;#&lt;/a&gt; Bellman-Ford&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;每条边都会存在一个边权的图，路径长度指的是路径上边的权值和&lt;/p&gt;
@@ -42,10 +42,10 @@
 &lt;p&gt;会进行多次迭代，没进行一次迭代，就对图上所有的边进行一次松弛操作，当一次迭代中的 dist 发生改变时，算法停止&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/08/14/mWuD7eAJa4qpn1Q.png&#34; alt=&#34;屏幕截图 2023-07-22 180218.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/08/14/mWuD7eAJa4qpn1Q.png&#34; alt=&#34;屏幕截图 2023-07-22 180218.png&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/08/14/inKzqUYBkPIXmcQ.png&#34; alt=&#34;屏幕截图 2023-07-22 181310.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/08/14/inKzqUYBkPIXmcQ.png&#34; alt=&#34;屏幕截图 2023-07-22 181310.png&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;没有任何更新的时候算法结束&lt;/p&gt;
@@ -60,7 +60,7 @@
 &lt;p&gt;能否用 O (nm) 的复杂度来检测图上是否存在负环       可以，从某个起点出发设置成 0，迭代 n 轮看看还能不能更新，如果可以就是存在负环&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码&#34;&gt;#&lt;/a&gt; 代码&lt;/h4&gt;
+&lt;h4 id=&#34;代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#代码&#34;&gt;#&lt;/a&gt; 代码&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;struct Edge &amp;#123;
     int x, y, v;
     // x 起点， y 终点， v边权
@@ -97,7 +97,7 @@ int shortestpath(int s, int t) &amp;#123;
     &amp;#125;
 &amp;#125;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;bellman-ford优化方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bellman-ford优化方法&#34;&gt;#&lt;/a&gt; Bellman-Ford 优化方法&lt;/h4&gt;
+&lt;h4 id=&#34;bellman-ford优化方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bellman-ford优化方法&#34;&gt;#&lt;/a&gt; Bellman-Ford 优化方法&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;队列优化 (SPFA): 每一次迭代的时候，只有在上一次迭代中被更新了距离的点，才有可能更新其它节点，因此，在每一次迭代的时候，我们将更新过的距离的顶点加入一个队列（如果顶点已经在队列里则不加），在一下次迭代时只需要变量队列中的顶点连出去的边即可&lt;/li&gt;
 &lt;li&gt;SPFA 在最坏情况下都会被卡刀 O (mn) 的时间复杂度&lt;/li&gt;
@@ -135,16 +135,16 @@ inline int shortestpath(int s, int t) &amp;#123;
 
 edge[x].push_back(make_pair(y, v));  存图
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;dijkstra&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dijkstra&#34;&gt;#&lt;/a&gt; Dijkstra&lt;/h3&gt;
+&lt;h3 id=&#34;dijkstra&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dijkstra&#34;&gt;#&lt;/a&gt; Dijkstra&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Dijkstra 算法常用于求&lt;strong&gt;无负权&lt;/strong&gt;边图中的最短路，在优化后有比 Bellman-Ford 算法优秀很多的时间复杂度&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/08/14/aK6uGfzHD4RBrWO.png&#34; alt=&#34;屏幕截图 2023-08-09 185421.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/08/14/aK6uGfzHD4RBrWO.png&#34; alt=&#34;屏幕截图 2023-08-09 185421.png&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/08/14/tOIoV3QPphjg9FK.png&#34; alt=&#34;屏幕截图 2023-08-09 212934.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/08/14/tOIoV3QPphjg9FK.png&#34; alt=&#34;屏幕截图 2023-08-09 212934.png&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;在每一轮中，将里起点最近的 (dist 最小，不能是无穷大) 的还不在 C 中的顶点加入 C，并且用这个点连出去的边通过松弛操作尝试更新其他的 dist&lt;/p&gt;
@@ -153,7 +153,7 @@ edge[x].push_back(make_pair(y, v));  存图
 &lt;p&gt;没有新的点加入 C 了，算法结束&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;代码实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码实现&#34;&gt;#&lt;/a&gt; 代码实现&lt;/h4&gt;
+&lt;h4 id=&#34;代码实现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#代码实现&#34;&gt;#&lt;/a&gt; 代码实现&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;将 C 设置为空，将 S 的距离设置为 0，其余顶点的距离设置为无穷大&lt;/li&gt;
 &lt;li&gt;在每一轮中，将离起点最近的（dist 最小，不能是无穷大）的还不 C 中的顶点加入 C，并且用这个点连出去的边通过松弛操作尝试更新其它的 dist&lt;/li&gt;
@@ -191,7 +191,7 @@ int Dijkstra(int s, int t) &amp;#123;
 
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;堆优化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#堆优化&#34;&gt;#&lt;/a&gt; 堆优化&lt;/h4&gt;
+&lt;h4 id=&#34;堆优化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#堆优化&#34;&gt;#&lt;/a&gt; 堆优化&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;堆优化 (优先队列)&lt;/li&gt;
 &lt;li&gt;我们采用一个堆来维护 dist 数组，算法时间复杂度可以提升至&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O((n + m)logn)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;   n 非常大， m 很小，效果更好&lt;/li&gt;
@@ -233,7 +233,7 @@ int Dijkstra(int s, int t) &amp;#123;
     return dist[t];
 &amp;#125;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;floyd&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#floyd&#34;&gt;#&lt;/a&gt; Floyd&lt;/h3&gt;
+&lt;h3 id=&#34;floyd&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#floyd&#34;&gt;#&lt;/a&gt; Floyd&lt;/h3&gt;
 &lt;p&gt;前面两种最短路算法，求的都是从一个起始点开始的最短路，如果我们相求图中所有顶点之间的最短路，就需要枚举每个点做为起点，这样子非常低效&lt;/p&gt;
 &lt;p&gt;Floyd 算法处理用邻接矩阵来存储的有向图非常方便&lt;/p&gt;
 &lt;ul&gt;
@@ -291,10 +291,10 @@ for (int k = 1; k &amp;lt;= n; ++k) &amp;#123;
         <title>第一篇博客</title>
         <link rel="alternate" href="http://www.lucky233.buzz/2023/08/14/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
         <content type="html">&lt;p&gt;Hello World!&lt;/p&gt;
-&lt;h2 id=&#34;第一章&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一章&#34;&gt;#&lt;/a&gt; 第一章&lt;/h2&gt;
-&lt;h2 id=&#34;第二章&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二章&#34;&gt;#&lt;/a&gt; 第二章&lt;/h2&gt;
-&lt;h2 id=&#34;第三章&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第三章&#34;&gt;#&lt;/a&gt; 第三章&lt;/h2&gt;
-&lt;h2 id=&#34;参考文献&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考文献&#34;&gt;#&lt;/a&gt; 参考文献&lt;/h2&gt;
+&lt;h2 id=&#34;第一章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一章&#34;&gt;#&lt;/a&gt; 第一章&lt;/h2&gt;
+&lt;h2 id=&#34;第二章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第二章&#34;&gt;#&lt;/a&gt; 第二章&lt;/h2&gt;
+&lt;h2 id=&#34;第三章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第三章&#34;&gt;#&lt;/a&gt; 第三章&lt;/h2&gt;
+&lt;h2 id=&#34;参考文献&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考文献&#34;&gt;#&lt;/a&gt; 参考文献&lt;/h2&gt;
 </content>
         <updated>2023-08-14T12:54:00.000Z</updated>
     </entry>
@@ -303,14 +303,14 @@ for (int k = 1; k &amp;lt;= n; ++k) &amp;#123;
         <title>Hello World</title>
         <link rel="alternate" href="http://www.lucky233.buzz/2023/08/14/hello-world/"/>
         <content type="html">&lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
-&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
+&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
+&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo new &lt;span class=&#34;token string&#34;&gt;&#34;My New Post&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/writing.html&#34;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
+&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/server.html&#34;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
+&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo generate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/generating.html&#34;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
+&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo deploy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/one-command-deployment.html&#34;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
 </content>
         <updated>2023-08-14T12:50:06.450Z</updated>
