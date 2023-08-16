@@ -2,21 +2,26 @@
 <rss version="2.0">
     <channel>
         <title>我の日记</title>
-        <link>http://www.lucky233.buzz</link>
-        <description>算法 &amp; 学习笔记</description>
+        <subtitle>不要忘了，这个世界穿透一切高墙的东西，它就在我们的内心深处，他们无法达到，也接触不到，那就是希望</subtitle>
+        <icon>https://www.lucky233.buuzz/images/favicon.ico</icon>
+        <link>https://www.lucky233.buuzz</link>
+        <author>
+          <name>Lucky Lzx</name>
+        </author>
+        <description>学习&amp;算法笔记</description>
         <language>zh-CN</language>
         <pubDate>Mon, 14 Aug 2023 23:18:08 +0800</pubDate>
         <lastBuildDate>Mon, 14 Aug 2023 23:18:08 +0800</lastBuildDate>
-        <category>algorithm</category>
-        <category>graph</category>
-        <category>shortest path</category>
+        <category term="algorithm study school" />
         <item>
-            <guid isPermalink="true">http://www.lucky233.buzz/2023/08/14/algorithm/graph/shortest%20path/</guid>
+            <guid isPermalink="true">https://www.lucky233.buuzz/2023/08/14/algorithm/graph/shortest%20path/</guid>
             <title>shortest path</title>
-            <link>http://www.lucky233.buzz/2023/08/14/algorithm/graph/shortest%20path/</link>
-            <category>algorithm</category>
-            <category>graph</category>
-            <category>shortest path</category>
+            <link>https://www.lucky233.buuzz/2023/08/14/algorithm/graph/shortest%20path/</link>
+            <category term="algorithm" scheme="https://www.lucky233.buuzz/categories/algorithm/" />
+            <category term="graph" scheme="https://www.lucky233.buuzz/categories/algorithm/graph/" />
+            <category term="algorithm" scheme="https://www.lucky233.buuzz/tags/algorithm/" />
+            <category term="graph" scheme="https://www.lucky233.buuzz/tags/graph/" />
+            <category term="shortest path" scheme="https://www.lucky233.buuzz/tags/shortest-path/" />
             <pubDate>Mon, 14 Aug 2023 23:18:08 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;最短路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#最短路&#34;&gt;#&lt;/a&gt; 最短路&lt;/h1&gt;
 &lt;h3 id=&#34;bellman-ford&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bellman-ford&#34;&gt;#&lt;/a&gt; Bellman-Ford&lt;/h3&gt;
